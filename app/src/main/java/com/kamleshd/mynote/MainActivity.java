@@ -80,51 +80,5 @@ RecyclerView recyclerView;
 
 
 
-    public void donebuttonclick(View view) {
 
-        TextView editText=(TextView) findViewById(R.id.editTextTextMultiLine);
-
-        String edit=editText.getText().toString();
-
-        Note note=new Note();
-        note.setText_Note((editText.getText().toString()));
-        db.addNote(note);
-
-
-        List<Note> notes=db.getAllNote();
-
-        for(Note contact:notes)
-        {
-            Log.d("sqlc", "select id ="+contact.getId()+"\n name ="+contact.getText_Note());
-            // contactArrayList.add(contact);
-        }
-        Intent i=new Intent(this, MainActivity.class);
-        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        startActivity(i);
-
-    }
-
-
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-}
+  }
